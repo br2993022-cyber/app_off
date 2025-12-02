@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mi App - Login</title>
 <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
 <div class="container">
@@ -24,6 +26,13 @@
 <script src="script.js"></script>
 <script type="module" src="firebaseConfig.js"></script>
 <script type="module" src="auth.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js")
+    .then(() => console.log("SW registrado"))
+    .catch(err => console.log("Error registrando SW", err));
+}
+</script>
 
 </body>
 </html>
